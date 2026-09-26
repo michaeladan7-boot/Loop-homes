@@ -1,0 +1,1687 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.303), rgba(0, 0, 0, 0.398)), url(img/monochromatic-urban-minimal-landscape.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    width: 100%;
+    height: 100%;
+}
+
+p {
+    font-family: "Inter", sans-serif;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+@font-face {
+    font-family: 'Maginia';
+    src: url('fonts/Maginia-Regular.woff2') format('woff2'),
+        url('fonts/Maginia-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --bg-dark-section: #2B2A28;
+    --bg-panel: #E8E1D3;
+    --text-light: #F5F5F5;
+    --text-main: #2B2A28;
+    --text-muted: #c5c5c5;
+    --button-primary: #C97B4A;
+    --button-hover: #c2771b;
+    --max-width: 1200px;
+    --border: rgba(255, 255, 255, 0.15);
+
+    --reveal-duration: 0.8s;
+    --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --reveal-distance: 40px;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 600;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px 20px;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.navbar ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 0%;
+    height: 1px;
+    background-color: white;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.primary-btn button {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2.5vw, 20px);
+    background-color: var(--button-primary);
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.primary-btn button:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
+/* hero */
+.hero {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 25px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 7vw, 5rem);
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 70px;
+    width: 60%;
+    font-family: 'Maginia', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.9rem;
+    font-weight: 100;
+}
+
+.hero h1 span {
+    color: var(--button-primary);
+    display: inline-block;
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+}
+
+.hero h1 span.fade-out {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.hero p {
+    font-size: clamp(1rem, 1vw, 0.9rem);
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 20px;
+    width: 40%;
+    line-height: 1.1;
+}
+
+.hero-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.hero-button a button {
+    text-decoration: none;
+    padding: 15px 45px;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+/* sneak-peak */
+.sneak-peak {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background-color: var(--bg-panel);
+}
+
+.sneak-peak h2 {
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    color: var(--text-main);
+    text-align: left;
+    margin-bottom: 10px;
+    width: 40%;
+    font-family: 'Maginia', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.1rem;
+    font-weight: 100;
+}
+
+.sneak-peak p {
+    font-size: clamp(1rem, 1vw, 0.9rem);
+    color: var(--text-main);
+    text-align: right;
+    margin-bottom: 20px;
+    width: 50%;
+    line-height: 1.1;
+}
+
+/* ============ Featured-Listings ============
+   Fix: cards felt empty (dark image edge-to-edge). Now each card is a
+   white "object" — image sits inset inside padding, title/description
+   live on the white body below it, like a physical printed card. */
+.Featured-Listings {
+    width: 100%;
+    height: auto;
+    padding: 20px 25px 60px;
+    background-color: var(--bg-dark-section);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Featured-Listings h2 {
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    width: 50%;
+    font-family: 'Maginia', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.1rem;
+    font-weight: 100;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px 20px;
+}
+
+.listing-card {
+    width: clamp(300px, 28%, 100%);
+    height: 560px;
+    min-height: 0;
+    background: var(--bg-panel);
+    border-radius: 14px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+    transition: transform 0.45s var(--reveal-ease), box-shadow 0.45s var(--reveal-ease);
+}
+
+.listing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.listing-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+.listing-image::before {
+    /* zoomable layer, separate from the tag/content so hover-scaling
+       never affects the tag's position */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.6s var(--reveal-ease);
+}
+
+.listing-card:hover .listing-image::before {
+    transform: scale(1.08);
+}
+
+.listing-tag {
+    position: absolute;
+    top: 350px;
+    left: 14px;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-light);
+    font-size: 0.7rem;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+
+.listing-body {
+    padding: 4px 8px 10px;
+}
+
+.listing-card h3 {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    color: var(--text-main);
+    text-align: left;
+    margin: 0 0 8px 0;
+    width: 100%;
+    font-family: 'Maginia', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.05rem;
+    font-weight: 400;
+}
+
+.listing-card p {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    color: #5a5750;
+    text-align: left;
+    margin: 0;
+    width: 100%;
+    line-height: 1.4;
+}
+
+/* home-sites */
+.home-sites {
+    width: 100%;
+    height: auto;
+    padding: 20px 25px;
+    background-color: var(--bg-panel);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.marquee-row {
+    width: 100%;
+    overflow: hidden;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+}
+
+.marquee-items {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 4rem;
+    padding: 20px 20px;
+}
+
+.home-sites h3 {
+    font-size: clamp(1.5rem, 3vw, 1.1rem);
+    color: var(--text-main);
+    text-align: center;
+    margin: 0 0 5px 0;
+    font-family: 'Maginia', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.05rem;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+/* ============ Category ============ */
+.Category {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 25px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.bg-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.bg-slide.active {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+.bg-slide.exit {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Glass panel — now the single content panel holding the stat badge
+   AND the sliding text/CTA. Given an explicit width so the 50%-width
+   text-slider inside it has something stable to size against. */
+.glass-card {
+    position: relative;
+    z-index: 1;
+    width: min(560px, 92vw);
+    background-color: rgba(122, 92, 63, 0.298);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 28px 26px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.197);
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-badge {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.stat-row .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--button-primary);
+    line-height: 1;
+}
+
+.stat-row .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04rem;
+}
+
+/* Text Slider Mechanics */
+.text-slider {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+}
+
+.Category-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.Category-text.active {
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.Category-text h2 {
+    font-size: clamp(1.4rem, 3.2vw, 2rem);
+    color: var(--text-light);
+    text-align: left;
+    margin-bottom: 10px;
+    width: 100%;
+    font-family: 'Maginia', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.06rem;
+    font-weight: 400;
+}
+
+.Category-text p {
+    font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+    color: var(--text-muted);
+    text-align: left;
+    margin-bottom: 18px;
+    width: 100%;
+    line-height: 1.4;
+}
+
+/* Fix: primary CTA + Next button now sit inline on one row, and the
+   Next button is an actual glass button (translucent + blurred),
+   not a solid orange block. */
+.cta-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.cta-row .primary-btn button {
+    padding: 12px 22px;
+}
+
+.glass-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--text-light);
+    font-size: 0.8rem;
+    padding: 11px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.glass-btn:hover {
+    background-color: var(--button-primary);
+    transform: translateX(2px);
+}
+
+.glass-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+}
+
+/* ============ How-It-Works ============ */
+.How-It-Works {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 25px 60px;
+    gap: 0.5rem;
+    background-color: var(--bg-panel);
+}
+
+.How-It-Works h2 {
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    width: 50%;
+    font-family: 'Maginia', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.1rem;
+    font-weight: 100;
+}
+
+.process-card {
+    width: 100%;
+    max-width: var(--max-width);
+    height: auto;
+    padding: 10px 15px;
+}
+
+.Pcard-2,
+.Pcard-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.process-text {
+    background-color: var(--bg-dark-section);
+    color: var(--text-light);
+    width: min(420px, 90%);
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 22px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.process-text h3 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-family: 'Maginia', sans-serif;
+    margin-bottom: 10px;
+    color: var(--button-primary);
+}
+
+.process-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+/* Elbow-arrow connectors that guide the eye from one process card to
+   the next, matching the reference sketch. One SVG shape, mirrored via
+   scaleX(-1) for the "reverse" direction — same trick used for the
+   home-sites marquee's two directions, kept consistent on purpose. */
+.flow-arrow {
+    width: 100%;
+    max-width: var(--max-width);
+    height: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.flow-arrow svg {
+    width: 220px;
+    height: 100%;
+}
+
+.flow-arrow.reverse svg {
+    transform: scaleX(-1);
+}
+
+/* ============ Stats-Band ============ */
+.Stats-Band {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 25px;
+    gap: 4rem;
+}
+
+.Stats-Band>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+}
+
+.Stats-Band .stat-number {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-family: 'Maginia', sans-serif;
+    color: var(--text-light);
+}
+
+.Stats-Band .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+
+/* ============ Featured-Agents ============
+   Fix: was one flat row of 6 alternating children (all images then
+   text squashed into a single line). Now each agent is its own row:
+   a fixed image box on the left, text beside it — repeated 3x. */
+.Featured-Agents {
+    width: 100%;
+    height: auto;
+    padding: 60px 25px;
+    background-color: var(--bg-dark-section);
+}
+
+.Featured-Agents h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--text-light);
+    text-align: left;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Maginia', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.1rem;
+    font-weight: 100;
+}
+
+
+.top-text {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    max-width: 560px;
+    width: 60%;
+    text-align: left;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    color: var(--text-light);
+}
+
+.agent-board {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 28px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.agent-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    padding: 18px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    background-color: #E8E1D3;
+}
+
+.agent-item:hover {
+    background-color: var(--bg-panel);
+}
+
+.agent-image {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    background-color: var(--bg-dark-section);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+}
+
+.agent-text h3 {
+    font-family: 'Maginia', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.agent-text p {
+    font-size: 0.9rem;
+    color: #6b6862;
+    line-height: 1.5;
+}
+
+/* ============ Testimonials ============
+   Bento layout from the sketch: one large quote card on the left,
+   two smaller stacked cards on the right. */
+.Testimonials {
+    width: 100%;
+    padding: 60px 25px 80px;
+    background-color: var(--bg-panel);
+}
+
+.Testimonials h2 {
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Maginia', sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 100;
+}
+
+.Testimonials-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 26px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card.large {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    /* justify-content: center; */
+    background-image: url(img/andre-morales-kalamar-Is9zywNUhKg-unsplash.jpg);
+}
+
+.testimonial-card.small:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.testimonial-card.small:nth-of-type(3) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.testimonial-card.small:nth-of-type(4) {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.testimonial-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--button-primary);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.testimonial-card.small .testimonial-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+}
+
+.testimonial-quote {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 16px;
+}
+
+.testimonial-card.small .testimonial-quote {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+.testimonial-role {
+    font-size: 0.8rem;
+    color: #8a877f;
+    margin-top: 2px;
+}
+
+@media (max-width: 760px) {
+    .Testimonials-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .testimonial-card.large,
+    .testimonial-card.small:nth-of-type(2),
+    .testimonial-card.small:nth-of-type(3) {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .agent-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ============ Final CTA ============
+   Full 100% x 100vh, centered text, button styled exactly like the
+   hero's — same .btn.primary-btn markup, same Maginia heading treatment,
+   so it bookends the page the way the hero opens it. */
+.Final-CTA {
+    width: 100%;
+    height: 100vh;
+    padding: 20px 25px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('img/robbie-duncan-L61Ekz4oTt4-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Final-CTA h2 {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+    color: white;
+    font-family: 'Maginia', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.4rem;
+    font-weight: 100;
+    max-width: 900px;
+    margin-bottom: 18px;
+}
+
+.Final-CTA p {
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.Final-CTA .hero-button a button {
+    padding: 15px 45px;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+/* ============ Footer ============ */
+.site-footer {
+    width: 100%;
+    background-color: var(--bg-dark-section);
+    padding: 60px 25px 30px;
+    color: var(--text-light);
+}
+
+.footer-top {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+}
+
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-brand .logo {
+    margin-bottom: 14px;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--button-primary);
+}
+
+.footer-contact p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--button-primary);
+}
+
+@media (max-width: 640px) {
+    .footer-top {
+        flex-direction: column;
+    }
+}
+
+/* ============ Universal scroll-reveal system ============
+   Design principle: every entrance uses the SAME duration and easing
+   (--reveal-duration / --reveal-ease); only the starting transform
+   differs per data-animate value. Hidden state is declared here, on
+   the attribute itself, so it exists at first paint — not added by JS
+   after the browser already rendered the element at full opacity
+   (that ordering causes a visible flash-then-fade on load). */
+
+[data-animate] {
+    transition: opacity var(--reveal-duration) var(--reveal-ease),
+        transform var(--reveal-duration) var(--reveal-ease);
+    will-change: opacity, transform;
+}
+
+[data-animate="fade-up"] {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+}
+
+[data-animate="fade-down"] {
+    opacity: 0;
+    transform: translateY(calc(var(--reveal-distance) * -1));
+}
+
+[data-animate="fade-left"] {
+    opacity: 0;
+    transform: translateX(calc(var(--reveal-distance) * -1));
+}
+
+[data-animate="fade-right"] {
+    opacity: 0;
+    transform: translateX(var(--reveal-distance));
+}
+
+[data-animate="zoom-in"] {
+    opacity: 0;
+    transform: scale(0.92);
+}
+
+[data-animate].is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+.no-js [data-animate] {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE SYSTEM — desktop → tablet → mobile
+   ========================================================= */
+
+/* Prevent accidental horizontal overflow everywhere */
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+/* Large screens */
+@media (min-width: 1201px) {
+    .container {
+        width: min(1200px, 100%);
+        margin-inline: auto;
+    }
+
+    .agent-board {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: min(1200px, 100%);
+    }
+
+    .agent-item {
+        min-width: 0;
+    }
+}
+
+/* Tablet / smaller laptops */
+@media (max-width: 1100px) {
+    header {
+        padding: 18px 20px;
+        gap: 16px;
+    }
+
+    .navbar ul {
+        gap: 0.25rem;
+        padding: 16px 10px;
+    }
+
+    .navbar ul li a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .hero h1 {
+        width: min(85%, 850px);
+        letter-spacing: 0.55rem;
+    }
+
+    .hero p {
+        width: min(60%, 600px);
+    }
+
+    .sneak-peak {
+        gap: 30px;
+    }
+
+    .sneak-peak h2,
+    .sneak-peak p {
+        width: 50%;
+    }
+
+    .container {
+        width: 100%;
+        padding-inline: 10px;
+    }
+
+    .listing-card {
+        width: min(31%, 360px);
+    }
+
+    .agent-board {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .agent-item {
+        flex: 1 1 280px;
+    }
+}
+
+/* Tablet / large phone */
+@media (max-width: 760px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 16px;
+    }
+
+    header .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar {
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .navbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .navbar ul {
+        width: max-content;
+        min-width: 100%;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 2px;
+        padding: 10px 4px;
+    }
+
+    .navbar ul li {
+        flex: 0 0 auto;
+    }
+
+    .navbar ul li a {
+        display: block;
+        white-space: nowrap;
+        padding: 8px 11px;
+        font-size: 0.82rem;
+    }
+
+    header>.primary-btn {
+        display: inline-flex;
+    }
+
+    .hero {
+        min-height: 78vh;
+        height: auto;
+        padding: 35px 18px 55px;
+    }
+
+    .hero h1 {
+        width: 100%;
+        margin-top: 45px;
+        font-size: clamp(2.1rem, 11vw, 4rem);
+        letter-spacing: 0.28rem;
+        line-height: 1.05;
+    }
+
+    .hero p {
+        width: min(100%, 560px);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .hero-button a button,
+    .Final-CTA .hero-button a button {
+        padding: 13px 28px;
+    }
+
+    .sneak-peak {
+        flex-direction: column;
+        align-items: center;
+        padding: 45px 20px;
+        gap: 14px;
+    }
+
+    .sneak-peak h2,
+    .sneak-peak p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sneak-peak h2 {
+        font-size: clamp(2rem, 9vw, 3.5rem);
+    }
+
+    .sneak-peak p {
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+
+    .Featured-Listings {
+        padding: 45px 16px 55px;
+    }
+
+    .Featured-Listings h2,
+    .How-It-Works h2 {
+        width: 100%;
+        font-size: clamp(2rem, 9vw, 3.5rem);
+    }
+
+    .container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    .listing-card {
+        width: min(100%, 430px);
+        height: auto;
+        min-height: 0;
+    }
+
+    .listing-image {
+        height: clamp(260px, 70vw, 390px);
+        margin-bottom: 0;
+    }
+
+    .listing-tag {
+        top: auto;
+        bottom: 14px;
+    }
+
+    .home-sites {
+        padding: 18px 0;
+    }
+
+    .marquee-items {
+        gap: 2.5rem;
+        padding: 15px 18px;
+    }
+
+    .home-sites h3 {
+        font-size: 1.25rem;
+    }
+
+    .Category {
+        min-height: 720px;
+        padding: 20px 16px 35px;
+        align-items: flex-end;
+    }
+
+    .glass-card {
+        width: min(100%, 560px);
+        padding: 22px 20px;
+    }
+
+    .cta-row {
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .cta-row .primary-btn,
+    .cta-row .primary-btn button,
+    .cta-row .glass-btn {
+        min-width: 0;
+    }
+
+    .cta-row .primary-btn {
+        flex: 1;
+    }
+
+    .cta-row .primary-btn button {
+        width: 100%;
+    }
+
+    .glass-btn {
+        flex: 0 0 auto;
+    }
+
+    .How-It-Works {
+        padding: 45px 16px 55px;
+    }
+
+    .process-card {
+        padding: 10px 0;
+    }
+
+    .Pcard-1,
+    .Pcard-2,
+    .Pcard-3,
+    .Pcard-4 {
+        align-items: center;
+    }
+
+    .process-text {
+        width: min(100%, 430px);
+        min-height: 170px;
+    }
+
+    .flow-arrow {
+        height: 65px;
+    }
+
+    .flow-arrow svg {
+        width: min(180px, 70vw);
+    }
+
+    .Stats-Band {
+        padding: 45px 18px;
+        gap: 30px 55px;
+    }
+
+    .Stats-Band>div {
+        min-width: 110px;
+    }
+
+    .Featured-Agents {
+        padding: 50px 18px;
+    }
+
+    .Featured-Agents h2 {
+        text-align: center;
+        font-size: clamp(2rem, 9vw, 3.2rem);
+    }
+
+    .top-text {
+        width: 100%;
+        max-width: 600px;
+        margin-inline: auto;
+        text-align: center;
+        border: 0;
+        margin-bottom: 30px;
+    }
+
+    .agent-board {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 14px;
+    }
+
+    .agent-item {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: 16px;
+        gap: 18px;
+    }
+
+    .agent-image {
+        width: 88px;
+        height: 88px;
+        flex: 0 0 88px;
+        font-size: 1.8rem;
+    }
+
+    .Testimonials {
+        padding: 50px 16px 65px;
+    }
+
+    .Testimonials h2 {
+        font-size: clamp(2rem, 9vw, 3.5rem);
+    }
+
+    .Testimonials-container {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 16px;
+    }
+
+    .testimonial-card.large,
+    .testimonial-card.small:nth-of-type(2),
+    .testimonial-card.small:nth-of-type(3) {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .Final-CTA {
+        min-height: 80vh;
+        height: auto;
+        padding: 70px 20px;
+    }
+
+    .Final-CTA h2 {
+        font-size: clamp(2.1rem, 10vw, 4rem);
+        letter-spacing: 0.18rem;
+    }
+
+    .Final-CTA p {
+        width: 100%;
+    }
+
+    .site-footer {
+        padding: 50px 20px 25px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    header {
+        padding: 13px 10px;
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .navbar ul {
+        justify-content: flex-start;
+    }
+
+    .navbar ul li a {
+        padding: 7px 9px;
+        font-size: 0.76rem;
+    }
+
+    header>.primary-btn button {
+        padding: 9px 16px;
+    }
+
+    .hero {
+        padding-inline: 14px;
+        min-height: 50vh;
+    }
+
+    .hero h1 {
+        margin-top: 30px;
+        letter-spacing: 0.16rem;
+        font-size: clamp(1.9rem, 12vw, 3.2rem);
+    }
+
+    .hero p {
+        font-size: 0.88rem;
+    }
+
+    .sneak-peak,
+    .Featured-Listings,
+    .How-It-Works,
+    .Featured-Agents,
+    .Testimonials {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .listing-card {
+        border-radius: 11px;
+    }
+
+    .listing-image {
+        height: 280px;
+    }
+
+    .listing-body {
+        padding: 2px 6px 10px;
+    }
+
+    .Category {
+        min-height: 650px;
+        padding: 12px;
+    }
+
+    .glass-card {
+        border-radius: 13px;
+        padding: 18px 16px;
+    }
+
+    .stat-row {
+        margin-bottom: 14px;
+        padding-bottom: 12px;
+    }
+
+    .stat-row .stat-number {
+        font-size: 1.7rem;
+    }
+
+    .Category-text h2 {
+        font-size: 1.55rem;
+    }
+
+    .Category-text p {
+        font-size: 0.86rem;
+        line-height: 1.5;
+    }
+
+    /* Keep CTA controls on one straight line on small screens */
+    .cta-row {
+        gap: 7px;
+    }
+
+    .cta-row .primary-btn button,
+    .glass-btn {
+        padding: 10px 13px;
+        font-size: 0.75rem;
+    }
+
+    .process-text {
+        padding: 20px 17px;
+    }
+
+    .agent-item {
+        align-items: flex-start;
+        padding: 14px;
+    }
+
+    .agent-image {
+        width: 70px;
+        height: 70px;
+        flex-basis: 70px;
+    }
+
+    .agent-text p {
+        font-size: 0.84rem;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .Final-CTA {
+        min-height: 70vh;
+        padding: 60px 15px;
+    }
+
+    .Final-CTA h2 {
+        letter-spacing: 0.08rem;
+    }
+
+    .footer-socials {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Very narrow phones */
+@media (max-width: 360px) {
+    .navbar ul li a {
+        padding-inline: 7px;
+        font-size: 0.7rem;
+    }
+
+    .hero h1 {
+        font-size: 1.85rem;
+    }
+
+    .cta-row .primary-btn button,
+    .glass-btn {
+        padding-inline: 10px;
+    }
+
+    .agent-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Accessibility: don't animate for users who explicitly disable motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+        transition: none !important;
+    }
+
+    .marquee-track {
+        transform: none !important;
+    }
+}

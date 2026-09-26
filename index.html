@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Homes</title>
+    <script>document.documentElement.classList.remove('no-js');</script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Boldonse&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">LOOP HOMES</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#place">Place</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+        <a class="btn primary-btn" href=""><button>Default</button></a>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>LOOP HOMES OF <span id="rotating-word">PASSION</span></h1>
+        <p>Discover your dream home with our curated selection of modern designs. The perfect blend of style and
+            comfort.</p>
+
+        <div class="hero-button">
+            <a class="btn primary-btn" href=""><button>Default</button></a>
+        </div>
+
+    </section>
+
+    <search class="sneak-peak">
+        <h2 data-animate="fade-left">Discover Your Perfect Home</h2>
+        <p data-animate="fade-right">Explore our exclusive collection of homes designed to meet your unique lifestyle
+            needs.</p>
+    </search>
+
+
+    <section class="Featured-Listings" id="place">
+        <h2 data-animate="fade-up">Featured Listings</h2>
+        <div class="container">
+            <div class="listing-card" data-animate="fade-up" data-delay="0">
+                <div class="listing-image"
+                    style="background-image:url('img/andre-morales-kalamar-Is9zywNUhKg-unsplash.jpg')">
+                    <span class="listing-tag">Featured</span>
+                </div>
+                <div class="listing-body">
+                    <h3>Modern Family Home</h3>
+                    <p>Beautiful modern home with spacious rooms and a lovely garden.</p>
+                </div>
+            </div>
+
+            <div class="listing-card" data-animate="fade-up" data-delay="150">
+                <div class="listing-image"
+                    style="background-image:url('img/rafael-hoyos-weht-KfXQz7i-caI-unsplash.jpg')">
+                    <span class="listing-tag">Featured</span>
+                </div>
+                <div class="listing-body">
+                    <h3>Modern Family Home</h3>
+                    <p>Beautiful modern home with spacious rooms and a lovely garden.</p>
+                </div>
+            </div>
+
+            <div class="listing-card" data-animate="fade-up" data-delay="300">
+                <div class="listing-image"
+                    style="background-image:url('img/andre-morales-kalamar-Is9zywNUhKg-unsplash.jpg')">
+                    <span class="listing-tag">Featured</span>
+                </div>
+                <div class="listing-body">
+                    <h3>Modern Family Home</h3>
+                    <p>Beautiful modern home with spacious rooms and a lovely garden.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-sites">
+        <div class="marquee-row" data-speed="0.6" data-direction="-1">
+            <div class="marquee-track">
+                <div class="marquee-items">
+                    <h3>Seoul</h3>
+                    <h3>Reykjavík</h3>
+                    <h3>Singapore</h3>
+                    <h3>Vancouver</h3>
+                    <h3>Copenhagen</h3>
+                </div>
+            </div>
+        </div>
+        <div class="marquee-row" data-speed="0.5" data-direction="1">
+            <div class="marquee-track">
+                <div class="marquee-items">
+                    <h3>Tokyo</h3>
+                    <h3>Melbourne</h3>
+                    <h3>Dubai</h3>
+                    <h3>Amsterdam</h3>
+                    <h3>Austin</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Category">
+        <!-- Sliding Background Container -->
+        <div class="bg-slider">
+            <div class="bg-slide active"
+                style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 100%), url('img/lissete-laverde-7OFTxbGWqwk-unsplash.jpg');">
+            </div>
+            <div class="bg-slide"
+                style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 100%), url('img/work-skyscraper-house-concrete-engineering.jpg');">
+            </div>
+            <div class="bg-slide"
+                style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 100%), url('img/seb-doe-8WIVwsBUYgA-unsplash.jpg');">
+            </div>
+            <div class="bg-slide"
+                style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 100%), url('img/robbie-duncan-L61Ekz4oTt4-unsplash.jpg');">
+            </div>
+        </div>
+
+        <!-- Glass panel: stat badge + sliding text/CTA -->
+        <div class="glass-card" data-animate="zoom-in">
+            <div class="icon-badge">🏠</div>
+            <div class="stat-row">
+                <span class="stat-number" data-target="1200" data-suffix="+">0</span>
+                <span class="stat-label">Homes Sold</span>
+            </div>
+            <div class="text-slider">
+                <div class="Category-text active" data-cta-label="View Villas">
+                    <h2>Luxury Villas</h2>
+                    <p>Discover our collection of luxurious villas, each designed to provide the ultimate in comfort and
+                        elegance.</p>
+                </div>
+                <div class="Category-text" data-cta-label="View Mansions">
+                    <h2>Oceanfront Mansions</h2>
+                    <p>Experience breathtaking views with expansive infinity pools overlooking pristine private beaches.
+                    </p>
+                </div>
+                <div class="Category-text" data-cta-label="View Townhouses">
+                    <h2>Modern Townhouses</h2>
+                    <p>Stylish and functional townhouses located in vibrant neighborhoods with easy access to city life.
+                    </p>
+                </div>
+                <div class="Category-text" data-cta-label="View Lofts">
+                    <h2>Contemporary Lofts</h2>
+                    <p>Open-concept lofts with high ceilings and industrial design elements, perfect for urban living.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cta-row">
+                <a class="btn primary-btn" href=""><button id="slide-cta">View Villas</button></a>
+                <button class="glass-btn next-btn" type="button">
+                    Next
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="How-It-Works" id="service">
+        <h2 data-animate="fade-up">How it works</h2>
+
+        <div class="process-card Pcard-1" data-animate="fade-right">
+            <div class="process-text Ptext-1">
+                <h3>Browse</h3>
+                <p>Explore our full catalogue of listings, filtered by location, price and the features that matter most
+                    to you.</p>
+            </div>
+        </div>
+
+        <div class="flow-arrow">
+            <svg viewBox="0 0 300 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 15 C 170 15, 170 95, 280 95" stroke="var(--button-primary)" stroke-width="3"
+                    stroke-linecap="round" marker-end="url(#arrowhead)" />
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+                        <path d="M0,0 L10,5 L0,10 Z" fill="var(--button-primary)" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="process-card Pcard-2" data-animate="fade-left">
+            <div class="process-text Ptext-2">
+                <h3>Tour</h3>
+                <p>Book a private viewing, in person or virtually, and get every question answered by a local agent.</p>
+            </div>
+        </div>
+
+        <div class="flow-arrow reverse">
+            <svg viewBox="0 0 300 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 15 C 170 15, 170 95, 280 95" stroke="var(--button-primary)" stroke-width="3"
+                    stroke-linecap="round" marker-end="url(#arrowhead2)" />
+                <defs>
+                    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+                        <path d="M0,0 L10,5 L0,10 Z" fill="var(--button-primary)" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="process-card Pcard-3" data-animate="fade-right">
+            <div class="process-text Ptext-3">
+                <h3>Offer</h3>
+                <p>Ready to move forward? We help you structure a competitive offer and handle the paperwork.</p>
+            </div>
+        </div>
+
+        <div class="flow-arrow">
+            <svg viewBox="0 0 300 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 15 C 170 15, 170 95, 280 95" stroke="var(--button-primary)" stroke-width="3"
+                    stroke-linecap="round" marker-end="url(#arrowhead3)" />
+                <defs>
+                    <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
+                        <path d="M0,0 L10,5 L0,10 Z" fill="var(--button-primary)" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <div class="process-card Pcard-4" data-animate="fade-left">
+            <div class="process-text Ptext-4">
+                <h3>Close</h3>
+                <p>Sign, settle, and get the keys to your new home — we stay with you through the final step.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="Stats-Band">
+        <div data-animate="fade-up" data-delay="0">
+            <span class="stat-number" data-target="1200" data-suffix="+">0</span>
+            <span class="stat-label">Homes Sold</span>
+        </div>
+
+        <div data-animate="fade-up" data-delay="150">
+            <span class="stat-number" data-target="48" data-suffix="+">0</span>
+            <span class="stat-label">Cities Covered</span>
+        </div>
+
+        <div data-animate="fade-up" data-delay="300">
+            <span class="stat-number" data-target="98" data-suffix="%">0</span>
+            <span class="stat-label">Client Satisfaction</span>
+        </div>
+    </section>
+
+    <section class="Featured-Agents">
+        <h2 data-animate="fade-up">Trusted Agents</h2>
+        <p data-animate="fade-up" class="top-text">Our agents know every neighborhood inside and out — here to guide you
+            from first
+            viewing to closing day, with no pressure and no guesswork.</p>
+
+        <div class="agent-board">
+            <div class="agent-item" data-animate="fade-right" data-delay="0">
+                <div class="agent-image" aria-hidden="true">🧑‍💼</div>
+                <div class="agent-text">
+                    <h3>Amara Owusu</h3>
+                    <p>Specializes in coastal villas and new developments. Known for closing deals fast without cutting
+                        corners.</p>
+                </div>
+            </div>
+
+            <div class="agent-item" data-animate="fade-right" data-delay="150">
+                <div class="agent-image" aria-hidden="true">🧑‍💼</div>
+                <div class="agent-text">
+                    <h3>James Boateng</h3>
+                    <p>A decade of experience in family homes and townhouses. Clients say he listens before he sells.
+                    </p>
+                </div>
+            </div>
+
+            <div class="agent-item" data-animate="fade-right" data-delay="300">
+                <div class="agent-image" aria-hidden="true">🧑‍💼</div>
+                <div class="agent-text">
+                    <h3>Sarah Mensah</h3>
+                    <p>Focused on first-time buyers, walking every client through the process step by step.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Testimonials" id="faq">
+        <h2 data-animate="fade-up">Testimonials</h2>
+        <div class="Testimonials-container">
+            <div class="testimonial-card large" data-animate="zoom-in">
+                <div class="testimonial-avatar">EK</div>
+                <p class="testimonial-quote">Loop Homes made buying our first villa feel effortless. Every viewing was
+                    on time, every question was answered the same day, and the paperwork never felt overwhelming.
+                    Three months later we still can't believe how smooth it was — from the first call to picking up
+                    the keys, it just worked.</p>
+                <div class="testimonial-name">Efua Konadu</div>
+                <div class="testimonial-role">Homeowner, Coastal Villa</div>
+            </div>
+
+            <div class="testimonial-card small" data-animate="zoom-in" data-delay="150">
+                <div class="testimonial-avatar">TD</div>
+                <p class="testimonial-quote">Sold our townhouse in under three weeks. Genuinely impressed.</p>
+                <div class="testimonial-name">Tunde Dankwa</div>
+            </div>
+
+            <div class="testimonial-card small" data-animate="zoom-in" data-delay="300">
+                <div class="testimonial-avatar">NA</div>
+                <p class="testimonial-quote">Patient, honest, and they found exactly what we asked for.</p>
+                <div class="testimonial-name">Nana Asante</div>
+            </div>
+
+            <div class="testimonial-card small" data-animate="zoom-in" data-delay="300">
+                <div class="testimonial-avatar">NA</div>
+                <p class="testimonial-quote">Patient, honest, and they found exactly what we asked for.</p>
+                <div class="testimonial-name">Nana Asante</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="Final-CTA">
+        <h2 data-animate="zoom-in">Ready to Find Your Next Home?</h2>
+        <p data-animate="fade-up">Join thousands of happy homeowners who found their perfect space through Loop Homes.
+            Your dream home is one click away.</p>
+        <div class="hero-button" data-animate="fade-up" data-delay="150">
+            <a class="btn primary-btn" href=""><button>Get Started</button></a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">LOOP HOMES</div>
+                <p>Modern homes, honest agents, and a smoother path from browsing to closing day.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#place">Place</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Our Agents</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Get in Touch</h4>
+                <p>hello@loophomes.com</p>
+                <p>+233 20 000 0000</p>
+                <p>Accra, Ghana</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Loop Homes. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="" aria-label="Instagram">Instagram</a>
+                <a href="" aria-label="Facebook">Facebook</a>
+                <a href="" aria-label="Twitter">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* ===== Hero rotating word ===== */
+        const words = ["PASSION", "STYLE", "COMFORT", "LUXURY"];
+        const rotSpan = document.getElementById("rotating-word");
+        let wi = 0;
+        function setFixedWidth() {
+            const measurer = document.createElement("span");
+            measurer.style.visibility = "hidden";
+            measurer.style.position = "absolute";
+            measurer.style.whiteSpace = "nowrap";
+            measurer.style.font = getComputedStyle(rotSpan).font;
+            measurer.style.letterSpacing = getComputedStyle(rotSpan).letterSpacing;
+            document.body.appendChild(measurer);
+            let maxWidth = 0;
+            words.forEach(word => {
+                measurer.textContent = word;
+                maxWidth = Math.max(maxWidth, measurer.offsetWidth);
+            });
+            document.body.removeChild(measurer);
+            rotSpan.style.width = maxWidth + "px";
+        }
+        setFixedWidth();
+        window.addEventListener("resize", setFixedWidth);
+        setInterval(() => {
+            rotSpan.classList.add("fade-out");
+            setTimeout(() => {
+                wi = (wi + 1) % words.length;
+                rotSpan.textContent = words[wi];
+                rotSpan.classList.remove("fade-out");
+            }, 300);
+        }, 3000);
+
+        /* ===== Infinite marquee (home-sites) ===== */
+        function initMarquee(row, speed, direction) {
+            const track = row.querySelector('.marquee-track');
+            const original = track.querySelector('.marquee-items');
+            const singleWidth = original.offsetWidth;
+            const rowWidth = row.offsetWidth;
+            const copiesNeeded = Math.ceil((rowWidth * 2) / singleWidth) + 1;
+            for (let n = 1; n < copiesNeeded; n++) {
+                track.appendChild(original.cloneNode(true));
+            }
+            let pos = direction < 0 ? 0 : -singleWidth;
+            function step() {
+                pos += speed * direction;
+                if (direction < 0 && pos <= -singleWidth) pos += singleWidth;
+                if (direction > 0 && pos >= 0) pos -= singleWidth;
+                track.style.transform = `translateX(${pos}px)`;
+                requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+        document.querySelectorAll('.marquee-row').forEach(row => {
+            const speed = parseFloat(row.dataset.speed) || 0.5;
+            const direction = parseFloat(row.dataset.direction) || 1;
+            initMarquee(row, speed, direction);
+        });
+
+        /* ===== Count-up stats (on scroll into view) ===== */
+        function animateCount(el) {
+            const target = parseInt(el.dataset.target, 10);
+            const suffix = el.dataset.suffix || '';
+            const duration = 1800;
+            const start = performance.now();
+            function tick(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target).toLocaleString() + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+                else el.textContent = target.toLocaleString() + suffix;
+            }
+            requestAnimationFrame(tick);
+        }
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCount(entry.target);
+                    countObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+        document.querySelectorAll('.stat-number').forEach(el => countObserver.observe(el));
+
+        /* ===== Universal scroll-reveal system =====
+           Hidden state lives in CSS ([data-animate] { opacity:0 ... }) so
+           it's present at first paint — this script only adds "is-visible"
+           once an element is scrolled into view, plus applies stagger delay. */
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const revealTargets = document.querySelectorAll('[data-animate]');
+
+        revealTargets.forEach(el => {
+            const delay = el.dataset.delay;
+            if (delay) el.style.transitionDelay = delay + 'ms';
+        });
+
+        if (prefersReducedMotion) {
+            revealTargets.forEach(el => el.classList.add('is-visible'));
+        } else {
+            /* Reveal every time the element enters the viewport.
+               When it leaves, reset it so the animation can play again
+               on the next scroll into view. */
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -8% 0px'
+            });
+
+            revealTargets.forEach(el => revealObserver.observe(el));
+        }
+
+        /* ===== Category carousel (background + text, click-driven, infinite) ===== */
+        function advanceCategorySlide() {
+            const bgSlides = document.querySelectorAll('.bg-slide');
+            const textSlides = document.querySelectorAll('.Category-text');
+            const ctaButton = document.getElementById('slide-cta');
+
+            let activeIdx = Array.from(bgSlides).findIndex(slide => slide.classList.contains('active'));
+            let nextIdx = (activeIdx + 1) % bgSlides.length;
+
+            bgSlides.forEach(slide => slide.classList.remove('exit'));
+            bgSlides[activeIdx].classList.remove('active');
+            bgSlides[activeIdx].classList.add('exit');
+            bgSlides[nextIdx].classList.add('active');
+
+            if (textSlides.length > 0) {
+                textSlides[activeIdx].classList.remove('active');
+                textSlides[nextIdx].classList.add('active');
+                if (ctaButton) ctaButton.textContent = textSlides[nextIdx].dataset.ctaLabel || ctaButton.textContent;
+            }
+        }
+
+        const nextBtn = document.querySelector('.next-btn');
+        let categoryAutoplay;
+        function resetCategoryAutoplay() {
+            clearInterval(categoryAutoplay);
+            categoryAutoplay = setInterval(advanceCategorySlide, 4000);
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                advanceCategorySlide();
+                resetCategoryAutoplay();
+            });
+        }
+        resetCategoryAutoplay();
+    </script>
+</body>
+
+</html>
