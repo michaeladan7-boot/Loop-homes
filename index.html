@@ -379,34 +379,23 @@
 
     <script>
         /* ===== Hero rotating word ===== */
-        const words = ["PASSION", "STYLE", "COMFORT", "LUXURY"];
+       const words = ["PASSION", "STYLE", "COMFORT", "LUXURY"];
         const rotSpan = document.getElementById("rotating-word");
         let wi = 0;
-        function setFixedWidth() {
-            const measurer = document.createElement("span");
-            measurer.style.visibility = "hidden";
-            measurer.style.position = "absolute";
-            measurer.style.whiteSpace = "nowrap";
-            measurer.style.font = getComputedStyle(rotSpan).font;
-            measurer.style.letterSpacing = getComputedStyle(rotSpan).letterSpacing;
-            document.body.appendChild(measurer);
-            let maxWidth = 0;
-            words.forEach(word => {
-                measurer.textContent = word;
-                maxWidth = Math.max(maxWidth, measurer.offsetWidth);
-            });
-            document.body.removeChild(measurer);
-            rotSpan.style.width = maxWidth + "px";
-        }
-        setFixedWidth();
-        window.addEventListener("resize", setFixedWidth);
+
         setInterval(() => {
+            // 1. Start the fade-out and slide-down transition
             rotSpan.classList.add("fade-out");
+
             setTimeout(() => {
+                // 2. While completely invisible (opacity: 0), swap the word text.
+                // The browser instantly recalculates the new natural width here!
                 wi = (wi + 1) % words.length;
                 rotSpan.textContent = words[wi];
+
+                // 3. Remove the class to fade and slide it back into view naturally
                 rotSpan.classList.remove("fade-out");
-            }, 300);
+            }, 300); // Matches the 0.3s transition duration in your CSS
         }, 3000);
 
         /* ===== Infinite marquee (home-sites) ===== */
